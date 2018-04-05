@@ -1,0 +1,50 @@
+<!-- Author: Deividas Sadeckas -->
+<html>
+    <head>
+        <title>Image swipe</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <div id="app">
+        <div class="offset-lg-4 col-lg-4 col-sm-12" id="main-box">
+            <button class="back" v-on:click="goBack()" v-if="back">
+                <i class="fa fa-reply fa-2x"></i> Go back
+                <br>
+            </button>
+            <div v-if="over" class="over">
+                <h3>No more images!</h3>
+                <i class="fa fa-smile-o fa-4x" aria-hidden="true"></i>
+                <button class="menu-option first" onclick="window.location.reload(true);">View again</button>
+                <button class="menu-option second">New collection</button>
+            </div>
+            <transition name="slide">
+                <div class="card" v-if="card">
+                    <img class="card-img-top" :src="image.url" alt="Image">
+                    <div class="card-body">
+                        <div v-if="votes">
+                            <button v-on:click="next(1)" class="vote">
+                                <i class="fa fa-heart fa-2x"></i> {{ upVoteCount }}
+                            </button>
+                            <button v-on:click="next(0)" class="vote">
+                                <i class="fa fa-times fa-2x"></i> {{ downVoteCount }}
+                            </button>
+                        </div>
+                        <p class="card-text" v-if="ratings">
+                            <i class="fa fa-star fa-2x" v-on:click="rating(1)"></i>
+                            <i class="fa fa-star fa-2x" v-on:click="rating(2)"></i>
+                            <i class="fa fa-star fa-2x" v-on:click="rating(3)"></i>
+                            <i class="fa fa-star fa-2x" v-on:click="rating(4)"></i>
+                            <i class="fa fa-star fa-2x" v-on:click="rating(5)"></i>
+                        </p>
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/31ce0d6872.js"></script>
+        <script src="https://unpkg.com/vue"></script>
+        <script src="js/swipe.js"></script>
+    </body>
+</html>

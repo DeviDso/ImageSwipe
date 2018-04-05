@@ -1,0 +1,96 @@
+#main-box{
+    overflow: hidden;
+}
+.over{
+    margin-top: 75px;
+}
+.menu-option{
+    background: #fff;
+    color: #333;
+    border: solid 1px #e3e3e3;
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 7px;
+    padding: 15px;
+}
+.menu-option.first{
+    background: #92B558;
+    color: #fff;
+}
+.menu-option.second{
+    background: #4F84C4;
+    color: #fff;
+}
+.card-img-top{
+    width: 75%;
+    margin: auto;
+}
+button:hover{
+    cursor: pointer;
+}
+.card-body p{
+    text-align: center;
+}
+.fa-heart{
+    color: #F7786B;
+}
+.fa-heart:hover{
+    color: #B93A32;
+    cursor: pointer;
+}
+.fa-times{
+    color: #91A8D0;
+}
+.fa-times:hover{
+    color: #034F84;
+    cursor: pointer;
+}
+.fa-star{
+    color: #ddd;
+}
+.fa-star:hover{
+    color: #D8AE47;
+    cursor: pointer;
+}
+.back{
+    z-index: 1;
+    position: absolute;
+    float: left;
+    margin: 1px;
+    background: #fff;
+    color: #333;
+    border: solid 1px #e3e3e3;
+    border-radius: 3px;
+}
+.vote{
+    width: 49%;
+    float: left;
+    margin: 1px;
+    background: none;
+    border: solid 1px #e3e3e3;
+    border-radius: 3px;
+}
+.over{
+    text-align: center;
+}
+.fa-smile-o{
+    color: #EDCDC2;
+}
+.slide-leave{
+    left: 0;
+}
+.slide-leave-to{
+    left: -750px;
+}
+.slide-leave-active{
+    transition: all 1.5s;
+}
+.slide-enter{
+    left: 0;
+}
+.slide-enter-to{
+    left: 0;
+}
+.slide-enter-active{
+    transition: all 1.5s;
+}
